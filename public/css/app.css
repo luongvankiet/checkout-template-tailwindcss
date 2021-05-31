@@ -1,0 +1,89 @@
+body {
+    min-height: 100vh;
+    padding: 0;
+}
+
+input, select, label {
+    cursor: pointer;
+}
+
+.floating-label>input::placeholder {
+    color: transparent;
+}
+
+.floating-label input:focus,
+.floating-label input:not(:placeholder-shown) {
+    padding-top: 1.2rem;
+    padding-bottom: 0.3rem;
+}
+
+.floating-label select:focus,
+.floating-label select:not([value=""]:checked) {
+    padding-top: 1.4rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.8rem;
+}
+
+.floating-label input:focus ~ label,
+.floating-label input:not(:placeholder-shown) ~ label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    color: rgb(156, 163, 175);
+    padding-top: 0.3rem;
+}
+
+.floating-label select:focus ~ label,
+.floating-label select:not(:checked) ~ label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: rgb(156, 163, 175);
+    padding-top: 0.3rem;
+    padding-left: 0.8rem;
+}
+
+@media (min-width: 1024px) {
+    .sidebar:after {
+        content: "";
+        display: block;
+        width: 45vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background: #fafafa;
+        z-index: -1;
+        box-shadow: 1px 0 0 #e1e1e1 inset;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main:before {
+        content: "";
+        width: 100vw;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 27.5rem;
+        background: white;
+        z-index: -1;
+    }
+}
+
+@media (min-width: 1280px){
+    .main:before {
+        right: 35.5rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    .main:before {
+        right: 42.2rem;
+    }
+}
+
+label {
+    height: 100%;
+    pointer-events: none;
+}
